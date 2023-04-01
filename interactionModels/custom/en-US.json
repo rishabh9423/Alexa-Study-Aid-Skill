@@ -1,0 +1,229 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "study aid",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "no",
+            "no thanks",
+            "end the quiz",
+            "No more questions",
+            "Quit the quiz",
+            "alexa cancel the quiz",
+            "hey alexa cancel the quiz",
+            "cancel the quiz",
+            "cancel"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "hey alexa stop the quiz",
+            "hey alexa stop the skill",
+            "Alexa stop the skill",
+            "Alexa stop the quiz",
+            "That\u0027s enough",
+            "Stop the quiz",
+            "Stop"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "StartQuizIntent",
+          "slots": [
+            {
+              "name": "topic",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "{topic}"
+              ],
+              "multipleValues": {
+                "enabled": true
+              }
+            }
+          ],
+          "samples": [
+            "ask me about {topic}",
+            "start a test on the {topic}",
+            "ask me something on the {topic}",
+            "run a quiz on the {topic}",
+            "ask me a question about {topic}",
+            "ask me a question on {topic}",
+            "start a quiz on {topic}",
+            "hey alexa please start a quiz on {topic}",
+            "hey alexa start a quiz on {topic}"
+          ]
+        },
+        {
+          "name": "ResearchEssayIntent",
+          "slots": [
+            {
+              "name": "searchTerm",
+              "type": "AMAZON.FirstName"
+            }
+          ],
+          "samples": [
+            "hey alexa who was {searchTerm}",
+            "hey alexa give me some essay tips on {searchTerm}",
+            "hey alexa provide me some information about {searchTerm}",
+            "hey alexa give me some information about {searchTerm}"
+          ]
+        },
+        {
+          "name": "AnswerIntent",
+          "slots": [
+            {
+              "name": "answer",
+              "type": "AMAZON.SearchQuery",
+              "multipleValues": {
+                "enabled": false
+              }
+            }
+          ],
+          "samples": [
+            "my answer is {answer}",
+            "My answer would be {answer}",
+            "the answer is {answer}",
+            "i think the answer is {answer}"
+          ]
+        },
+        {
+          "name": "AnotherQIntent",
+          "slots": [],
+          "samples": [
+            "sure",
+            "yes please",
+            "yes"
+          ]
+        },
+        {
+          "name": "OptionsIntent",
+          "slots": [],
+          "samples": [
+            "what are the options for this question",
+            "what are the options for this",
+            "i need to select from a few choices",
+            "what are the options",
+            "give me a choice",
+            "what are the potential answers",
+            "i need options",
+            "options please",
+            "what are my options",
+            "give me some options"
+          ]
+        },
+        {
+          "name": "ChangeTopicIntent",
+          "slots": [
+            {
+              "name": "topic",
+              "type": "AMAZON.FirstName"
+            }
+          ],
+          "samples": [
+            "wait change the topic to {topic}",
+            "No change the topic to {topic}",
+            "change the topic to {topic}",
+            "Hey alexa change the topic to {topic}"
+          ]
+        },
+        {
+          "name": "ScoreIntent",
+          "slots": [],
+          "samples": [
+            "How many questions have I answered correctly",
+            "What\u0027s my current score",
+            "What\u0027s my progress so far",
+            "Can you give me an update on my score",
+            "Tell me my score",
+            "How am I doing",
+            "What\u0027s my score",
+            "What is my score"
+          ]
+        },
+        {
+          "name": "MotivateIntent",
+          "slots": [],
+          "samples": [
+            "give me another quote to inspire me",
+            "please give me another quote to inspire me",
+            "Alexa please give me another quote to inspire me",
+            "Can you give me a new motivational quote",
+            "I\u0027m feeling down ",
+            "I\u0027m feeling down Can you give me a new motivational quote",
+            "Alexa I\u0027m feeling down Can you give me a new motivational quote",
+            "can you motivate me with a new quote",
+            "Alexa can you motivate me with a new quote",
+            "Alexa I need some inspiration. Can you give me a quote",
+            "give me another motivational quote",
+            "Alexa give me another motivational quote",
+            "Alexa motivate me for the day ahead",
+            "Alexa can you give me a quote to start my day",
+            "Alexa give me a daily inspirational quote",
+            "give me another quote",
+            "share another quote",
+            "Tell me a quote that will motivate me to achieve my goals",
+            "Can you share a positive quote",
+            "Tell me a quote that will inspire me to work harder",
+            "I need some words of encouragement Alexa",
+            "What\u0027s a good motivational quote",
+            "Inspire me with a quote",
+            "Can you give me a quote to lift my spirits",
+            "I want to hear a quote",
+            "What\u0027s a quote for inspiration",
+            "Give me a famous quote",
+            "Tell me something motivating",
+            "Can you share a quote with me",
+            "I need some motivation Alexa",
+            "Tell me a quote to inspire me",
+            "Give me a motivational quote",
+            "Give me some motivational quotes"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "StartQuizIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "topic",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.418263768503.295378421551"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.418263768503.295378421551",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please specify the topic."
+          }
+        ]
+      }
+    ]
+  },
+  "version": "36"
+}
